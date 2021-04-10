@@ -35,4 +35,10 @@ describe Contestant do
       expect(@contestant.full_name).to eq "Alexander Aigiades"
     end
   end
+
+  context '#out_of_state?' do
+    it 'returns true if out of state' do
+      expect(@contestant.out_of_state?).to eq false
+    end
+  end
 end
