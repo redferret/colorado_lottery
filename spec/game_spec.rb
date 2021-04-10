@@ -9,5 +9,12 @@ describe Game do
     it 'creates instance' do
       expect(@game).to be_instance_of Game
     end
+  context '#national_drawing?' do
+    it 'is not a national drawing by default' do
+      expect(@game.national_drawing?).to eq false
+    end
+    it 'is a national drawing' do
+      game = Game.new('Pick 4', 3, true)
+      expect(game.national_drawing?).to eq true
+    end
   end
-end
