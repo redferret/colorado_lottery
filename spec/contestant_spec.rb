@@ -41,4 +41,16 @@ describe Contestant do
       expect(@contestant.out_of_state?).to eq false
     end
   end
+
+  context '#add_game_interest #game_interests' do
+    it 'has game_interests' do
+      expect(@contestant.game_interests).to eq []
+    end
+    it 'shows the game interests' do
+      expected_interests = ['Mega Millions', 'Pick 4']
+      @contestant.add_game_interest('Mega Millions')
+      @contestant.add_game_interest('Pick 4')
+      expect(@contestant.game_interests).to eq expected_interests
+    end
+  end
 end
